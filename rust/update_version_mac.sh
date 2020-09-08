@@ -40,6 +40,8 @@ TAG="v$TARGET_VERSION"
 git tag "$TAG" -m "$(git log -n 1 --pretty=%B)"
 git describe
 
+git push --atomic origin master $TAG
+
 # cleanup
 rm tag.txt
 rm tag.txt.txt
